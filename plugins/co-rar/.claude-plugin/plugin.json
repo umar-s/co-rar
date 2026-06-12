@@ -1,0 +1,19 @@
+{
+  "name": "co-rar",
+  "version": "1.0.0",
+  "description": "CO-RAR — Continuous Resilient Adversarial Reasoning in Codeless Design. A frame for designing and critiquing systems where reasoning lives inside execution, an adversary or moving target exists, and the system is expected to mutate under pressure rather than break. Provides a task diagnostic (N/S/A conditions), seven design principles (P1-P7), operational metrics, and reference playbooks for feedback loops, adversarial critics, and mutation stratification.",
+  "author": {
+    "name": "Sergei",
+    "email": "sergei.bitsmedia@gmail.com"
+  },
+  "license": "MIT",
+  "keywords": [
+    "architecture",
+    "adversarial-reasoning",
+    "codeless-design",
+    "resilience",
+    "ai-first-backend",
+    "agentic-systems",
+    "feedback-loops"
+  ]
+}

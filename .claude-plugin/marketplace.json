@@ -1,0 +1,40 @@
+{
+  "name": "co-rar",
+  "owner": {
+    "name": "umar-s"
+  },
+  "metadata": {
+    "description": "CO-RAR — Continuous Resilient Adversarial Reasoning in Codeless Design",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "co-rar",
+      "source": "./plugins/co-rar",
+      "description": "Design and critique frame for systems where AI orchestrates execution and quality is held by a continuous adversarial loop — anti-spam/anti-fraud, warmup and deliverability, agentic pipelines, codeless backends, systems that must mutate under environmental pressure instead of decaying.",
+      "version": "1.0.0",
+      "author": {
+        "name": "Sergei",
+        "email": "sergei.bitsmedia@gmail.com"
+      },
+      "repository": "https://github.com/umar-s/co-rar",
+      "license": "MIT",
+      "keywords": [
+        "architecture",
+        "adversarial-reasoning",
+        "codeless-design",
+        "resilience",
+        "ai-first-backend",
+        "agentic-systems",
+        "feedback-loops"
+      ],
+      "category": "architecture",
+      "tags": [
+        "system-design",
+        "architecture-review",
+        "adversarial-critic",
+        "self-modifying-systems"
+      ]
+    }
+  ]
+}
