@@ -81,6 +81,8 @@ Healthy cadence: the critic should generate enough attacks that Adversarial Cove
 
 Self-filtering is itself an AI task: the critic runs N attacks, classifies each as "production handled correctly" or "production handled badly," and only the latter feed into the mutation pipeline. Humans review aggregate patterns, not individual attacks.
 
+One filtering rule is asymmetric: when two independent lenses converge on the same weakness — two attack categories, or the critic rediscovering something P5 telemetry already surfaced — do not collapse the findings as duplicates. Independent convergence is severity signal, not redundancy: blind agreement between lenses is the cheapest strong evidence that a weakness is real and reachable. Rank converged findings above equally-severe singletons when feeding the mutation pipeline.
+
 ## Anti-patterns specific to the critic
 
 **Critic = production with a different temperature.** Same prompt, same context, slightly different settings. This is theater; the critic shares production's blind spots.

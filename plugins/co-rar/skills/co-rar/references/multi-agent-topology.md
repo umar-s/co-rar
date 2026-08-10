@@ -145,6 +145,8 @@ The immutable mutation log is shared across all agents but writable by none exce
 
 **Role bleed**: The Orchestrator starts generating fixes when it thinks the Builder is too slow. The Critic starts proposing solutions because they seem obvious. The Builder starts re-attacking its own work to "save time." Each instance of role bleed dilutes the specialization and the system collapses back toward a single confused agent. Police role boundaries explicitly in prompts.
 
+**Context bleed**: An agent receives another agent's session transcript instead of its structured artifact — the Critic reads the Builder's implementation narrative and starts reviewing the justifications instead of the work; anchoring quietly spends the independence the topology exists to buy. All inter-agent traffic is artifacts (Reasoning Task, Vulnerability Report, Counter-Report, Proposed Mutation): the claim and its evidence, never the conversation that produced it.
+
 **Critic hyperactivity (autoimmune)**: Without the Builder's objection mechanism, the Critic generates ever more creative attacks, the Builder patches them all, the system accumulates defensive complexity until it can barely function. The objection mechanism is the immune-tolerance equivalent that prevents this.
 
 **Builder over-deference**: The Builder treats every Vulnerability Report as a directive rather than a hypothesis. This is the inverse of hyperactivity — Critic-driven runaway with the Builder as enabler. The objection mechanism must be culturally and procedurally real, not just nominally available.
