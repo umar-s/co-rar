@@ -1,5 +1,9 @@
 # co-rar
 
+[![version](https://img.shields.io/github/v/release/umar-s/co-rar?label=version&color=0b7285)](https://github.com/umar-s/co-rar/releases/latest)
+[![changelog](https://img.shields.io/badge/changelog-keep--a--changelog-0b7285)](CHANGELOG.md)
+[![license](https://img.shields.io/badge/license-MIT-0b7285)](LICENSE)
+
 **CO-RAR — Continuous Resilient Adversarial Reasoning in Codeless Design**, packaged as a Claude Code plugin.
 
 A frame for designing and critiquing systems where reasoning belongs inside execution, where the system is expected to mutate under environmental pressure rather than break, and where quality is maintained by a continuous adversarial loop rather than by upfront correctness. Think anti-spam/anti-fraud, email warmup and deliverability, growth automation, agentic pipelines, AI-first backends — any system facing an adversary or a moving target that adapts faster than you can ship code.
