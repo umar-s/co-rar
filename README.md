@@ -4,7 +4,7 @@
 [![changelog](https://img.shields.io/badge/changelog-keep--a--changelog-0b7285)](CHANGELOG.md)
 [![license](https://img.shields.io/badge/license-MIT-0b7285)](LICENSE)
 
-**CO-RAR — Continuous Resilient Adversarial Reasoning in Codeless Design**, packaged as a Claude Code plugin.
+**CO-RAR — Continuous Resilient Adversarial Reasoning in Codeless Design**, packaged as a plugin for Claude Code and Codex.
 
 A frame for designing and critiquing systems where reasoning belongs inside execution, where the system is expected to mutate under environmental pressure rather than break, and where quality is maintained by a continuous adversarial loop rather than by upfront correctness. Think anti-spam/anti-fraud, email warmup and deliverability, growth automation, agentic pipelines, AI-first backends — any system facing an adversary or a moving target that adapts faster than you can ship code.
 
@@ -45,6 +45,17 @@ In Claude Code, add the directory as a local marketplace:
 ```
 
 After install, restart Claude Code so the skill is registered. Verify: ask Claude to "critique this architecture with CO-RAR" — it should announce it is using the `co-rar` skill.
+
+### In Codex
+
+Codex reads `.claude-plugin/marketplace.json` as is, so the same sources work:
+
+```bash
+codex plugin marketplace add umar-s/co-rar     # or ~/Project/co-rar
+codex plugin add co-rar@co-rar
+```
+
+From the umbrella catalog it is `codex plugin marketplace add umar-s/devpowers` and `codex plugin add co-rar@devpowers`. The skill shows up as `co-rar:co-rar`: name it in a prompt as `$co-rar:co-rar`, or let it trigger on its description. It ships no scripts, so Codex's sandbox does not affect it.
 
 ## Layout
 

@@ -24,6 +24,13 @@ End-to-end test — install the plugin into Claude Code and confirm the skill re
 
 Restart Claude Code, then ask it to "critique this architecture with CO-RAR" — it should announce it is using the `co-rar` skill.
 
+The same in Codex, without a model call — `codex debug prompt-input` renders the prompt the model would get, skill list included (an isolated `CODEX_HOME=$(mktemp -d)` keeps the user's Codex untouched):
+
+```bash
+codex plugin marketplace add ~/Project/co-rar && codex plugin add co-rar@co-rar
+codex debug prompt-input x </dev/null | grep -o 'co-rar:co-rar' | head -1
+```
+
 ## Structure and how the pieces relate
 
 Two-level layout: the repo root is the marketplace (`.claude-plugin/marketplace.json` is the catalog); the plugin lives in `plugins/co-rar/` with its own `.claude-plugin/plugin.json`. The skill content is under `plugins/co-rar/skills/co-rar/`.
