@@ -24,11 +24,17 @@ End-to-end test — install the plugin into Claude Code and confirm the skill re
 
 Restart Claude Code, then ask it to "critique this architecture with CO-RAR" — it should announce it is using the `co-rar` skill.
 
-The same in Codex, without a model call — `codex debug prompt-input` renders the prompt the model would get, skill list included (an isolated `CODEX_HOME=$(mktemp -d)` keeps the user's Codex untouched):
+The same in Codex, without a model call — `codex debug prompt-input` renders the prompt the model would get, skill list included. The subshell's own `CODEX_HOME` keeps the user's Codex untouched; the prompt is captured first, so a failing `codex` fails the check instead of hiding behind a pipe:
 
 ```bash
-codex plugin marketplace add ~/Project/co-rar && codex plugin add co-rar@co-rar
-codex debug prompt-input x </dev/null | grep -o 'co-rar:co-rar' | head -1
+(
+  set -euo pipefail
+  export CODEX_HOME="$(mktemp -d)"
+  codex plugin marketplace add ~/Project/co-rar
+  codex plugin add co-rar@co-rar
+  prompt="$(codex debug prompt-input x </dev/null)"
+  grep -q 'co-rar:co-rar' <<<"$prompt" && echo 'OK: co-rar:co-rar is in the skill list'
+)
 ```
 
 ## Structure and how the pieces relate
