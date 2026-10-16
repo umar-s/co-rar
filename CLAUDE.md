@@ -29,7 +29,9 @@ The same in Codex, without a model call — `codex debug prompt-input` renders t
 ```bash
 (
   set -euo pipefail
-  export CODEX_HOME="$(mktemp -d)"
+  CODEX_HOME="$(mktemp -d)"   # assigned apart from export: `export X=$(…)` returns export's status
+  export CODEX_HOME
+  trap 'rm -rf "$CODEX_HOME"' EXIT
   codex plugin marketplace add ~/Project/co-rar
   codex plugin add co-rar@co-rar
   prompt="$(codex debug prompt-input x </dev/null)"
